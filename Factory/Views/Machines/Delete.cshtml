@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2>Are you sure you want to remove this machine? </h2>
+
+  @Html.DisplayFor(model => model.Name)?</h2>
+  @using (Html.BeginForm())
+{
+  
+  <input type="button" class="btn btn-outline-danger" value="Delete machine" onclick="location.href='@Url.Action("Delete", new { id = Model.MachineId })'">
+
+}
+@Html.ActionLink("Back to List", "Index")
+
+@* <input type="button" class="btn btn-outline-primary" value="Back to details" onclick="location.href='@Url.Action("Details", new { id = Model.MachineId })'"> *@

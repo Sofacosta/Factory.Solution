@@ -7,3 +7,8 @@ div#footer {
 	background:#333;
 	padding:8px;
 }
+
+.machinebox {
+border: 2px solid rgb(86, 185, 36);
+box-shadow: 8px 8px 5px rgb(124, 22, 22)
+}
