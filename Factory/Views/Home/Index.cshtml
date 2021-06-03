@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models
+@model List<Factory.Models.Engineer>
+
+<h1>Dr. Sillystringz's Engineer and Machinery Manager</h1>
+
+<input type="button" class="btn btn-outline-primary" value="All engineers" onclick="location.href='@Url.Action("Index", "Engineers")'">
+<input type="button" class="btn btn-outline-primary" value="All machines" onclick="location.href='@Url.Action("Index", "Machines")'">
+
