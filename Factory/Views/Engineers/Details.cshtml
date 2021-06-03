@@ -1,0 +1,10 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models
+@model Factory.Models.Engineer
+
+<h1>Engineer - @Html.DisplayFor(model => model.Name)</h1>
+
+@* <input type="button" class="btn btn-outline-warning" value="Edit engineer" onclick="location.href='@Url.Action("Edit", new { id = Model.EngineerId })'"> *@
