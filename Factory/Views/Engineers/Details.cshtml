@@ -5,7 +5,9 @@
 @using Factory.Models
 @model Factory.Models.Engineer
 
+
 <h1>Engineer - @Html.DisplayFor(model => model.Name)</h1>
 <hr>
 
 <input type="button" class="btn btn-warning" value="Edit engineer" onclick="location.href='@Url.Action("Edit", new { id = Model.EngineerId })'">
+<input type="button" class="btn btn-danger" value="Delete engineer" onclick="location.href='@Url.Action("Delete", new { id = Model.EngineerId })'">

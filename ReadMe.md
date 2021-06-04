@@ -110,7 +110,10 @@ Create a connection string to connect the database to the web application
 
 ## Known Bugs
 
-TODO
+## Notes and Resources
+
+[HTML button callinng an MVC Controller and Action method](https://stackoverflow.com/questions/2503923/html-button-calling-an-mvc-controller-and-action-method)
+
 
 ## Support and Contact Details
 

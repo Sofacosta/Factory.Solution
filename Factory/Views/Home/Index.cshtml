@@ -5,8 +5,11 @@
 @using Factory.Models
 @model List<Factory.Models.Engineer>
 
-<h1>Dr. Sillystringz's Engineer and Machinery Manager</h1>
-
-<input type="button" class="btn btn-info" value="All engineers" onclick="location.href='@Url.Action("Index", "Engineers")'">
-<input type="button" class="btn btn-info" value="All machines" onclick="location.href='@Url.Action("Index", "Machines")'">
-
+<div class="home">
+  <h1>Dr. Sillystringz's Factory</h1>
+  <hr />
+  <div class="controls">
+    <input type="button" class="btn btn-info" value="All engineers" onclick="location.href='@Url.Action("Index", "Engineers")'" />
+    <input type="button" class="btn btn-info" value="All machines" onclick="location.href='@Url.Action("Index", "Machines")'" />
+  </div>
+</div>
