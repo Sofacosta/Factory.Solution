@@ -25,3 +25,16 @@ h1 {
 	width: 240px;
 	margin: 0 auto;
 }
+
+.controlsEngineers {
+	width: 240px;
+	margin: 0 auto;
+}
+
+h2 {
+	text-align: center;
+}
+
+h4, li {
+	text-align: center;
+}
