@@ -15,5 +15,27 @@
 
   <input type="submit" value="Save" class="btn btn-outline-success">
 }
+@if (@Model.JoinEntities.Count == 0)
+{
+  <p>This Machine doesn't have any Engineer's licensed to it</p>
+}
+else
+{
+  <h4>This Machine is licensed to:</h4>
+  <ul>
+  @foreach (var join in Model.JoinEntities)
+    {
+      <li>@join.Engineer.Name</li>
+      @using (Html.BeginForm("DeleteEngineer", "Machines"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        @Html.Hidden("machineId", @Model.MachineId)
+        <input type="submit" value="Delete this Engineer from this Machine" />
+      }
+    }
+  </ul>
+}
+
+
 
 <input type="button" class="btn btn-outline-primary" value="Back to details" onclick="location.href='@Url.Action("Details", new { id = Model.MachineId })'">

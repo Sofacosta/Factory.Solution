@@ -12,6 +12,8 @@
 <input type="button" class="btn btn-warning" value="Edit engineer" onclick="location.href='@Url.Action("Edit", new { id = Model.EngineerId })'">
 <input type="button" class="btn btn-danger" value="Delete engineer" onclick="location.href='@Url.Action("Delete", new { id = Model.EngineerId })'">
 <input type="button" class="btn btn-primary" value="Back to list of engineers" onclick="location.href='@Url.Action("Index")'">
+<hr>
+<input type="button" class="btn-dark" value="Add machine certification" onclick="location.href='@Url.Action("AddMachine", new { id = Model.EngineerId })'">
 
 @if(@Model.JoinEntities.Count == 0)
 {

@@ -13,6 +13,8 @@
 <input type="button" class="btn-outline-danger" value="Delete machine" onclick="location.href='@Url.Action("Delete", new { id = Model.MachineId })'">
 <input type="button" class="btn-outline-primary" value="Back to list of machines" onclick="location.href='@Url.Action("Index")'">
 </div>
+<hr>
+<input type="button" class="btn btn-dark" value="Add a certified engineer to this machine" onclick="location.href='@Url.Action("AddEngineer", new { id = Model.MachineId })'">
 
 @if(@Model.JoinEntities.Count == 0)
 {
