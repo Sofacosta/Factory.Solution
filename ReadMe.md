@@ -1,10 +1,10 @@
 <div align="center">
 
-# Factory 
+# Factory 🔩
 
 </div>
 
-<h3 align="center">An application to keep track of their machine repairs, 06-03-2021</h3>
+<h3 align="center">An application to keep track of their machine repairs, Initiated: 06-03-2021 Modified:06-05-21</h3>
 <h4 align="center"> By Sofia Acosta</h4>
 
 ## Description
@@ -76,7 +76,7 @@ Create a connection string to connect the database to the web application
 }
 ```
 
-- TODO CHANGE DBNAME
+- CHANGE DBNAME
 - Put in your MySQL password in `pwd=YourPassword`. Change the server, port, and uid if necessary.
 
 ### Import Database Using Entity Framework Core
@@ -112,7 +112,9 @@ Create a connection string to connect the database to the web application
 
 ## Notes and Resources
 
-[HTML button callinng an MVC Controller and Action method](https://stackoverflow.com/questions/2503923/html-button-calling-an-mvc-controller-and-action-method)
+- [HTML button callinng an MVC Controller and Action method](https://stackoverflow.com/questions/2503923/html-button-calling-an-mvc-controller-and-action-method)
+
+- [Form buttons](https://getbootstrap.com/docs/4.0/components/buttons/)
 
 
 ## Support and Contact Details
