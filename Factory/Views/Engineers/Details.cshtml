@@ -11,3 +11,24 @@
 
 <input type="button" class="btn btn-warning" value="Edit engineer" onclick="location.href='@Url.Action("Edit", new { id = Model.EngineerId })'">
 <input type="button" class="btn btn-danger" value="Delete engineer" onclick="location.href='@Url.Action("Delete", new { id = Model.EngineerId })'">
+<input type="button" class="btn btn-primary" value="Back to list of engineers" onclick="location.href='@Url.Action("Index")'">
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>@Html.DisplayFor(model => model.Name) is not certified to repair any machines.</p>
+}
+else
+{
+  <h3>@Html.DisplayFor(model => model.Name) is certified to repair:</h3>
+  <ul>
+  @foreach(EngineerMachine join in Model.JoinEntities)
+  {
+    <li><h4>@Html.ActionLink($"{join.Machine.Name}", "Details", "Machines", new { id = join.Machine.MachineId })</h4></li>
+    @using (Html.BeginForm("DeleteMachine", "Engineers"))
+    {
+      @Html.Hidden("joinId", @join.EngineerMachineId)
+      <input type="submit" class="btn btn-outline-danger btn-sm" value="Remove certification">
+    }
+  }
+  </ul>
+}

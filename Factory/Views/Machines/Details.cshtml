@@ -6,10 +6,12 @@
 @model Factory.Models.Machine
 
 <h1>Machine - @Html.DisplayFor(model => model.Name)</h1>
+<hr>
 
 <div class="machinebox"> 
-<input type="button" class="btn btn-outline-warning" value="Edit machine" onclick="location.href='@Url.Action("Edit", new { id = Model.MachineId })'">
-<input type="button" class="btn btn-outline-danger" value="Delete machine" onclick="location.href='@Url.Action("Delete", new { id = Model.MachineId })'">
+<input type="button" class="btn-outline-warning" value="Edit machine" onclick="location.href='@Url.Action("Edit", new { id = Model.MachineId })'">
+<input type="button" class="btn-outline-danger" value="Delete machine" onclick="location.href='@Url.Action("Delete", new { id = Model.MachineId })'">
+<input type="button" class="btn-outline-primary" value="Back to list of machines" onclick="location.href='@Url.Action("Index")'">
 </div>
 
 @if(@Model.JoinEntities.Count == 0)
