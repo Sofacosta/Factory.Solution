@@ -7,9 +7,12 @@
 @model List<Factory.Models.Machine>
 
 <h2>Machines</h2>
+
 <hr>
+<div class="controlsMachines">
 <input type="button" class="btn btn-outline-success" value="Add new machine" onclick="location.href='@Url.Action("Create")'">
 <input type="button" class="btn btn-outline-primary" value="Home" onclick="location.href='@Url.Action("Index", "Home")'">
+</div>
 <hr>
 
 <h4>All Machines:</h4>
