@@ -7,16 +7,17 @@
 <h2>Add an engineer certified @Html.DisplayFor(model => model.Name)</h2>
 
 <hr>
-
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)
   
   @Html.Label("Select engineer")
-  @Html.DropDownList("EngineerId")
-
+  @Html.DropDownList("EngineerId", (IEnumerable<SelectListItem>)ViewBag.EngineerId, new {@class="custom-select add-engineer-list"})
+    
   <input type="submit" value="Add engineer" class="btn btn-outline-success">
 }
-
-<input type="button" class="btn btn-outline-primary" value="Home" onclick="location.href='@Url.Action("Index", "Home")'">
-<input type="button" class="btn btn-outline-primary" value="Back to details" onclick="location.href='@Url.Action("Details", new { id = Model.MachineId })'">
+<hr>
+<div class="flex-center">
+  <input type="button" class="btn btn-outline-primary" value="Home" onclick="location.href='@Url.Action("Index", "Home")'">
+  <input type="button" class="btn btn-outline-primary" value="Back to details" onclick="location.href='@Url.Action("Details", new { id = Model.MachineId })'">
+</div>

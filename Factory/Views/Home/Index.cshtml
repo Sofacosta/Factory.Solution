@@ -6,9 +6,7 @@
 @model List<Factory.Models.Engineer>
 
 <div class="home">
-  <h1>Dr. Sillystringz's Factory</h1>
-  <hr />
-  <div class="controls">
+  <div class="controls flex-center">
     <input type="button" class="btn btn-info" value="All engineers" onclick="location.href='@Url.Action("Index", "Engineers")'" />
     <input type="button" class="btn btn-info" value="All machines" onclick="location.href='@Url.Action("Index", "Machines")'" />
   </div>

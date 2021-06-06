@@ -5,12 +5,13 @@
 @model Factory.Models.Machine
 
 <h4>Add a new machine</h4>
+<div class="flex-center">
+  @using (Html.BeginForm())
+  {
+      @Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name, new { required="required", autocomplete="off"})
 
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name, new { required="required", autocomplete="off"})
-
-    <input type="submit" value="Add machine" class="btn btn-outline-success">
-}
-<input type="button" class="btn btn-outline-primary" value="Back to list" onclick="location.href='@Url.Action("Index")'">
+      <input type="submit" value="Add machine" class="btn btn-outline-success">
+  }
+  <input type="button" class="btn btn-outline-primary" value="Back to list" onclick="location.href='@Url.Action("Index")'">
+</div>

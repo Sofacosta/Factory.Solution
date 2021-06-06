@@ -6,33 +6,36 @@
 @model Factory.Models.Machine
 
 <h1>Machine - @Html.DisplayFor(model => model.Name)</h1>
-<hr>
+<hr />
 
-<div class="machinebox"> 
-<input type="button" class="btn-outline-warning" value="Edit machine" onclick="location.href='@Url.Action("Edit", new { id = Model.MachineId })'">
-<input type="button" class="btn-outline-danger" value="Delete machine" onclick="location.href='@Url.Action("Delete", new { id = Model.MachineId })'">
-<input type="button" class="btn-outline-primary" value="Back to list of machines" onclick="location.href='@Url.Action("Index")'">
+<div class="flex-center"> 
+  <input type="button" class="btn btn-outline-warning" value="Edit machine" onclick="location.href='@Url.Action("Edit", new { id = Model.MachineId })'">
+  <input type="button" class="btn btn-outline-danger" value="Delete machine" onclick="location.href='@Url.Action("Delete", new { id = Model.MachineId })'">
+  <input type="button" class="btn btn-outline-primary" value="Back to list of machines" onclick="location.href='@Url.Action("Index")'">
 </div>
 <hr>
-<input type="button" class="btn btn-dark" value="Add a certified engineer to this machine" onclick="location.href='@Url.Action("AddEngineer", new { id = Model.MachineId })'">
-
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>There are no engineers certified to repair @Html.DisplayFor(model => model.Name).</p>
-}
-else
-{
-  <h3>@Html.DisplayFor(model => model.Name) is certified to be repaired by:</h3>
-  <ul>
-  @foreach(EngineerMachine join in Model.JoinEntities)
+<div class="flex-center">
+  <input type="button" class="btn btn-dark" value="Add a certified engineer to this machine" onclick="location.href='@Url.Action("AddEngineer", new { id = Model.MachineId })'">
+</div>
+<div class="flex-center">
+  
+  @if(@Model.JoinEntities.Count == 0)
   {
-    <li><h4>@Html.ActionLink($"{join.Engineer.Name}", "Details", "Engineers", new { id = join.Engineer.EngineerId })</h4></li>
-    @using (Html.BeginForm("DeleteEngineer", "Machines"))
-    {
-      @Html.Hidden("joinId", @join.EngineerMachineId)
-      <input type="submit" class="btn btn-outline-danger btn-sm" value="Remove certification">
-    }
+    <p>There are no engineers certified to repair @Html.DisplayFor(model => model.Name).</p>
   }
-  </ul>
-}
-
+  else
+  {
+    <h3>@Html.DisplayFor(model => model.Name) is certified to be repaired by:</h3>
+    <ul>
+    @foreach(EngineerMachine join in Model.JoinEntities)
+    {
+      <li><h4>@Html.ActionLink($"{join.Engineer.Name}", "Details", "Engineers", new { id = join.Engineer.EngineerId })</h4></li>
+      @using (Html.BeginForm("DeleteEngineer", "Machines"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type="submit" class="btn btn-outline-danger btn-sm" value="Remove certification">
+      }
+    }
+    </ul>
+  }
+</div>
