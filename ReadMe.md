@@ -33,6 +33,18 @@ In order to run the application, please install .NET for your computer to recogn
 2. Open the file. Follow the installation steps.
 3. Confirm the installation is successful by opening your terminal and running the command `dotnet --version`. The response should be something similar to this:`5.0.100`. This means it was successfully installed.
 
+##### Migrations and Database
+
+1. Create appsettings.json file in your project and add this code into it: {
+  "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=3306;database=name_yourdatabase;uid=root;pwd=[PASSWORD];"
+  }
+}
+2. Add your appsettings.json file in your .gitignore file to keep your password safe: */appsettings.json
+3. To create a migration in the root directory of the project, use the command: dotnet ef migrations add Initial 
+4. Apply migration with the command: dotnet ef database update
+5. To restore database use the command: dotnet ef database restore
+
 ##### Installing MySQL
 
 MySQL is a type of database software used to create, edit, query, and manage SQL data.
